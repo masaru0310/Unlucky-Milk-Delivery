@@ -18,9 +18,9 @@ public class AreaWhereMinigame : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "Player")
+        if(other.gameObject.GetComponent<BikeController>() == true)
         {
-            //other.GetComponent<Player>
+            // ミニゲームスタート
         }
     }
 }

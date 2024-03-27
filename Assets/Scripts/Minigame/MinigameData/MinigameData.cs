@@ -6,6 +6,7 @@ public class MinigameData : MonoBehaviour
 {
     public enum ID
     {
-        Bike
+        Bike_Corner,
+
     }
 }
