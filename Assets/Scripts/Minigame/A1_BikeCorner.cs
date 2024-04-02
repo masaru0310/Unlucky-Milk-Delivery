@@ -35,6 +35,7 @@ public class A1_BikeCorner : MinigameBase
     protected override void FuncMinigame()
     {
         PhotonNetwork.Instantiate("Coming_Bike", _comingBike.transform.position, Quaternion.identity);
+
         isStartMinigame = false;
     }
 }

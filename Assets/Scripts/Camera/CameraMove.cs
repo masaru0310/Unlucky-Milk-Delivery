@@ -1,8 +1,9 @@
+using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraMove : MonoBehaviour
+public class CameraMove : MonoBehaviourPunCallbacks
 {
     [SerializeField] private GameObject _pcPos;
 
@@ -18,6 +19,9 @@ public class CameraMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // 自身のプレイヤーしか操作できない
+        if (!photonView.IsMine) return;
+
         NormalMove();
     }
 

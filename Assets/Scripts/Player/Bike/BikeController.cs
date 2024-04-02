@@ -1,13 +1,15 @@
+using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class BikeController : MonoBehaviour
+public class BikeController : MonoBehaviourPunCallbacks
 {
     // 変数
     private float _moveInput;
-    private float _steerInput;
+    public float _steerInput;
+    public float _steerInput_Mouse;
     private float _rayLength;
     private float _currentVelocityOffset;
 
@@ -79,8 +81,10 @@ public class BikeController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         _moveInput = Input.GetAxis("Vertical");
         _steerInput = Input.GetAxis("Horizontal");
+        _steerInput_Mouse = Input.GetAxis("Mouse X") * Time.deltaTime * 5;
 
         transform.position = _sphereRB.transform.position;
 
@@ -92,8 +96,12 @@ public class BikeController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        // 自身のプレイヤーしか操作できない
+        if (!photonView.IsMine) return;
+
         Movement();
 
+        // タイヤの回転
         _frontTyre.transform.Rotate(Vector3.right, Time.deltaTime * TYRE_ROT_SPEED * _currentVelocityOffset);
         _backTyre.transform.Rotate(Vector3.right, Time.deltaTime * TYRE_ROT_SPEED * _currentVelocityOffset);
 
@@ -198,6 +206,10 @@ public class BikeController : MonoBehaviour
         }
     }
 
+
+    /// <summary>
+    /// 空中にいるとき、重力を発生させる
+    /// </summary>
     void Gravity()
     {
         _sphereRB.AddForce(_gravity * Vector3.down, ForceMode.Acceleration);
