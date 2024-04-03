@@ -8,14 +8,28 @@ public class UIManager : MonoBehaviour
     // UI
     [SerializeField, Tooltip("ミルクの残り宅配数")]
     private Text _remainingMilkText;
+    [SerializeField, Tooltip("ミルクお届け時のUI")]
+    private GameObject _deliveredMilkImage;
 
     private PlayerParameter _playerParameterObj;
     private bool _isFindPlayer;
+
+    // プロパティ
+
+    /// <summary>
+    /// ミルクお届け時のUIを表示、非表示を切り替え
+    /// </summary>
+    public bool IsDeliveredMilkImageActiveProp
+    {
+        set { _deliveredMilkImage.SetActive(value); }
+    }
 
     // Start is called before the first frame update
     void Start()
     {
         _isFindPlayer = false;
+
+        _deliveredMilkImage.SetActive(false);
     }
 
     // Update is called once per frame
@@ -29,7 +43,7 @@ public class UIManager : MonoBehaviour
   
 
     /// <summary>
-    /// プレイヤーの情報を取得
+    /// プレイヤーのインスタンスを見つける
     /// </summary>
     private bool FindPlayer()
     {
@@ -57,6 +71,9 @@ public class UIManager : MonoBehaviour
     /// </summary>
     public void DispRemainingMilk()
     {
-        _remainingMilkText.text = _playerParameterObj.MilkRemainingProp.ToString();
+        if (_playerParameterObj != null)
+        {
+            _remainingMilkText.text = _playerParameterObj.MilkRemainingProp.ToString();
+        }
     }
 }

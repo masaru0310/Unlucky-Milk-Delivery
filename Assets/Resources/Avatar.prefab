@@ -1376,6 +1376,7 @@ GameObject:
   - component: {fileID: 8360847033697597530}
   - component: {fileID: 144030531783770852}
   - component: {fileID: 3625078964586370100}
+  - component: {fileID: 2444036197704638993}
   m_Layer: 7
   m_Name: Model_Bike
   m_TagString: Player
@@ -1518,6 +1519,18 @@ MonoBehaviour:
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 0
   m_UseLocal: 1
+--- !u!114 &2444036197704638993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3064572294154263867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b1789d0b657d8a458579e9c45d17bd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3149225014796606601
 GameObject:
   m_ObjectHideFlags: 0
@@ -3597,7 +3610,6 @@ GameObject:
   - component: {fileID: 4944655832976295605}
   - component: {fileID: 3650770037276984957}
   - component: {fileID: 6415179153300891780}
-  - component: {fileID: 4662289138293855446}
   m_Layer: 0
   m_Name: Bike
   m_TagString: Player
@@ -3936,18 +3948,6 @@ MonoBehaviour:
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 0
   m_UseLocal: 1
---- !u!114 &4662289138293855446
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8761467266679055310}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b1789d0b657d8a458579e9c45d17bd1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &8854493547013440081
 GameObject:
   m_ObjectHideFlags: 0

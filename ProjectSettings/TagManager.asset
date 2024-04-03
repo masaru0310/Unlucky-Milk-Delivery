@@ -6,6 +6,7 @@ TagManager:
   tags:
   - BootUnlucky
   - RemainingMilk
+  - Canvas
   layers:
   - Default
   - TransparentFX
@@ -16,8 +17,8 @@ TagManager:
   - SphereRB
   - ModelBike
   - Derivable
-  - 
-  - 
+  - MinigameArea
+  - DeliveryLocation
   - 
   - 
   - 
